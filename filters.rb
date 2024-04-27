@@ -13,7 +13,7 @@ def find(id)
     candidates.select do |candidate|
     candidate[:experience] &&
     candidate[:github_points] >= 100 &&
-    candidate[:languages].include?('Ruby' || 'Python') &&
+    (candidate[:languages].include?('Ruby') || candidate[:languages].include?('Python')) &&
     (Date.today - candidate[:date_applied]).to_i <= 15 &&
     candidate[:age] > 17
     end
