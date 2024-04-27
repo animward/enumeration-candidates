@@ -20,3 +20,9 @@ def find(id)
   end
   
   # More methods will go below
+
+  def ordered_by_qualifications(candidates)
+    candidates.sort_by do |candidate|
+      [-candidate[:experience], -candidate[:github_points]]
+    end
+  end
