@@ -10,8 +10,13 @@ def find(id)
   end
   
   def qualified_candidates(candidates)
-    candidate[:github_points] >= 100
-    candidate[:languages].include?('Ruby' || 'Python')
+    candidates.select do |candidate|
+    candidate[:experience] &&
+    candidate[:github_points] >= 100 &&
+    candidate[:languages].include?('Ruby' || 'Python') &&
+    (Date.today - candidate[:date_applied]).to_i <= 15 &&
+    candidate[:age] > 17
+    end
   end
   
   # More methods will go below
