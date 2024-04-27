@@ -10,7 +10,8 @@ def find(id)
   end
   
   def qualified_candidates(candidates)
-    # Your code Here
+    candidate[:github_points] >= 100
+    candidate[:languages].include?('Ruby' || 'Python')
   end
   
   # More methods will go below
